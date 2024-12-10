@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '중국 고전 성격 테스트'
+}
 
 export default function Home() {
   return (

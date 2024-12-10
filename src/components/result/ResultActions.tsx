@@ -1,7 +1,14 @@
 import React from 'react';
 import { Film, Share2, RotateCcw, Download } from 'lucide-react';
 
-const ResultActions = ({ mediaUrl, onShare, onRetake, onDownload }) => {
+type ResultActionsProps = {
+  mediaUrl: string;
+  onShare: () => void;
+  onRetake: () => void;
+  onDownload: () => void;
+}
+
+const ResultActions = ({ mediaUrl, onShare, onRetake, onDownload }: ResultActionsProps) => {
   return (
     <div className="mt-8 grid grid-cols-2 gap-4">
       <a

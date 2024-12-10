@@ -33,7 +33,7 @@ npm run dev
 
 ## 🌐 환경 변수 설정
 
-`.env.local` 파일을 생성하고 다음 환경 변수를 설정하세요:
+`.env` 파일을 생성하고 다음 환경 변수를 설정하세요:
 
 ```env
 NEXT_PUBLIC_API_URL=your_api_url
@@ -45,9 +45,6 @@ NEXT_PUBLIC_API_URL=your_api_url
 sinotale/
 ├── src
 │   ├── app
-│   │   ├── fonts
-│   │   │   ├── GeistMonoVF.woff
-│   │   │   └── GeistVF.woff
 │   │   ├── globals.css
 │   │   ├── icon.ico
 │   │   ├── layout.tsx

@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎭 나와 닮은 중국 고전 속 인물 찾기
 
-## Getting Started
+![Preview](/assets/thumbnail.jpg)
 
-First, run the development server:
+## 📖 소개
+
+중국 고전 문학 작품 속 인물들과 사용자의 성격을 매칭해주는 웹 애플리케이션입니다.  
+목란사, 진향련, 섭소천 등 중국 고전 문학 6편에 등장하는 16인의 인물들 중 사용자와 가장 잘 맞는 캐릭터를 선정합니다.
+
+### ✨ 주요 기능
+
+- 🤖 성격 분석 및 캐릭터 매칭
+- 📝 개인화된 결과 스토리텔링
+- 🎬 관련 미디어 소개
+- 🔗 공유 기능
+
+## 🛠 기술 스택
+
+- **Frontend**: Next.js 14 (App Router)
+- **Deployment**: Vercel
+- **Styling**: Tailwind CSS
+- **State Management**: Zustand
+
+## 🏃‍♂️ 실행 방법
 
 ```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 환경 변수 설정
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`.env.local` 파일을 생성하고 다음 환경 변수를 설정하세요:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_API_URL=your_api_url
+```
 
-## Learn More
+## 📂 프로젝트 구조
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+sinotale/
+├── src
+│   ├── app
+│   │   ├── fonts
+│   │   │   ├── GeistMonoVF.woff
+│   │   │   └── GeistVF.woff
+│   │   ├── globals.css
+│   │   ├── icon.ico
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── test
+│   │       ├── page.tsx
+│   │       ├── questions
+│   │       │   ├── layout.tsx
+│   │       │   └── page.tsx
+│   │       └── result
+│   │           ├── layout.tsx
+│   │           └── page.tsx
+│   ├── components
+│   │   ├── Progress.tsx
+│   │   ├── Question.tsx
+│   │   └── result
+│   │       └── ResultActions.tsx
+│   ├── config.ts
+│   ├── lib
+│   │   ├── api.ts
+│   │   ├── store.ts
+│   │   └── types.ts
+│   └── utils
+├── tailwind.config.ts
+└── tsconfig.json
+```

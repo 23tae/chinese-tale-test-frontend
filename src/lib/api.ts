@@ -1,6 +1,6 @@
 import { Question, TestResult } from './types'
+import { API_BASE_URL } from '@/config';
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
 export const IMAGE_BASE_URL = API_BASE_URL.replace('/api', '')
 
 export async function fetchQuestions(): Promise<Question[]> {

@@ -80,17 +80,24 @@ export default function Result() {
         </div>
 
         <div className="space-y-6">
-          {/* 기본 설명 */}
+          {/* 인물 설명 */}
           <div className="prose max-w-none">
             <p className="text-gray-800 leading-relaxed whitespace-pre-wrap">
-              {result.description}
+              {result.character.description}
             </p>
           </div>
 
+          {/* 기본 해석 */}
+          {result.description && (
+            <div className="bg-blue-50 p-6 rounded-lg">
+              <p className="text-gray-800 leading-relaxed">
+                {result.description}
+              </p>
+            </div>
+          )}
           {/* 현대적 해석 */}
           {result.modern_interpretation && (
-            <div className="bg-blue-50 p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-3 text-blue-900">현대적 해석</h2>
+            <div className="bg-green-50 p-6 rounded-lg">
               <p className="text-gray-800 leading-relaxed">
                 {result.modern_interpretation}
               </p>
@@ -99,8 +106,7 @@ export default function Result() {
 
           {/* 조언 */}
           {result.advice && (
-            <div className="bg-green-50 p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-3 text-green-900">당신을 위한 조언</h2>
+            <div className="bg-red-50 p-6 rounded-lg">
               <p className="text-gray-800 leading-relaxed">
                 {result.advice}
               </p>

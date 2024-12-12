@@ -4,15 +4,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '8000',
-        pathname: '/static/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'sinotale-backend-production.up.railway.app',
-        port: '',
+        protocol: (process.env.NEXT_PUBLIC_BACKEND_PROTOCOL || 'http') as 'http' | 'https',
+        hostname: process.env.NEXT_PUBLIC_BACKEND_HOST || 'localhost',
+        port: process.env.NODE_ENV === 'development' ? (process.env.NEXT_PUBLIC_BACKEND_PORT || '8000') : undefined,
         pathname: '/static/**',
       }
     ],

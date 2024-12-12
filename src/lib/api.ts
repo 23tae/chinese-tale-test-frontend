@@ -1,16 +1,17 @@
 import { Question, TestResult } from './types'
-import { API_BASE_URL } from '@/config';
+import { config } from '@/config';
 
-export const IMAGE_BASE_URL = API_BASE_URL.replace('/api', '')
+
+export const IMAGE_BASE_URL = config.api.baseUrl.replace('/api', '')
 
 export async function fetchQuestions(): Promise<Question[]> {
-  const response = await fetch(`${API_BASE_URL}/questions`);
+  const response = await fetch(`${config.api.baseUrl}/questions`);
   if (!response.ok) throw new Error('Failed to fetch questions');
   return response.json();
 }
 
 export async function submitAnswers(answers: Record<string, number>): Promise<TestResult> {
-  const response = await fetch(`${API_BASE_URL}/analyze`, {
+  const response = await fetch(`${config.api.baseUrl}/analyze`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ answers }),

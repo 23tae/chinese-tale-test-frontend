@@ -37,6 +37,9 @@ npm run dev
 
 ```env
 NEXT_PUBLIC_API_URL=your_api_url
+NEXT_PUBLIC_BACKEND_PROTOCOL=your_backend_protocol
+NEXT_PUBLIC_BACKEND_HOST=your_backend_host
+NEXT_PUBLIC_BACKEND_PORT=your_backend_port
 ```
 
 ## 📂 프로젝트 구조

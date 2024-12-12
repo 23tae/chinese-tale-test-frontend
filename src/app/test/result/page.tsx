@@ -89,27 +89,40 @@ export default function Result() {
 
           {/* 기본 해석 */}
           {result.description && (
-            <div className="bg-blue-50 p-6 rounded-lg">
-              <p className="text-gray-800 leading-relaxed">
-                {result.description}
-              </p>
+            <div className="relative bg-blue-50 p-6 rounded-lg">
+              <div className="absolute left-0 top-0 bottom-0 w-2 bg-blue-300 rounded-l-lg"></div>
+              <div className="pl-4">
+                <div className="text-blue-800 font-bold mb-2">기본 해석</div>
+                <p className="text-gray-800 leading-relaxed">
+                  {result.description}
+                </p>
+              </div>
             </div>
           )}
+          
           {/* 현대적 해석 */}
           {result.modern_interpretation && (
-            <div className="bg-green-50 p-6 rounded-lg">
-              <p className="text-gray-800 leading-relaxed">
-                {result.modern_interpretation}
-              </p>
+            <div className="relative bg-green-50 p-6 rounded-lg">
+              <div className="absolute left-0 top-0 bottom-0 w-2 bg-green-300 rounded-l-lg"></div>
+              <div className="pl-4">
+                <div className="text-green-800 font-bold mb-2">현대적 해석</div>
+                <p className="text-gray-800 leading-relaxed">
+                  {result.modern_interpretation}
+                </p>
+              </div>
             </div>
           )}
 
           {/* 조언 */}
           {result.advice && (
-            <div className="bg-red-50 p-6 rounded-lg">
-              <p className="text-gray-800 leading-relaxed">
-                {result.advice}
-              </p>
+            <div className="relative bg-red-50 p-6 rounded-lg">
+              <div className="absolute left-0 top-0 bottom-0 w-2 bg-red-300 rounded-l-lg"></div>
+              <div className="pl-4">
+                <div className="text-red-800 font-bold mb-2">조언</div>
+                <p className="text-gray-800 leading-relaxed">
+                  {result.advice}
+                </p>
+              </div>
             </div>
           )}
         </div>

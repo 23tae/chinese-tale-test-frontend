@@ -28,7 +28,7 @@ export default function Result() {
 
   const handleShare = async () => {
     try {
-      await navigator.clipboard.writeText(`${window.location.origin}/test`);
+      await navigator.clipboard.writeText(`${window.location.origin}`);
       alert('링크가 복사되었습니다!')
     } catch (err) {
       console.error('링크 복사 실패:', err)
@@ -45,11 +45,16 @@ export default function Result() {
         const element = document.getElementById('result-content');
         if (!element) return;
   
-        const canvas = await html2canvas(element);
+        const canvas = await html2canvas(element, {
+          useCORS: true
+        });
         const dataUrl = canvas.toDataURL('image/png');
         
+        const now = new Date();
+        const formattedDate = now.toISOString().replace(/[-:T.]/g, '').slice(0, 12);    
+        
         const link = document.createElement('a');
-        link.download = `${result?.character.name}_결과.png`;
+        link.download = `중국고전테스트_${formattedDate}.png`;
         link.href = dataUrl;
         link.click();
       } catch (err) {
@@ -67,12 +72,13 @@ export default function Result() {
       <div id="result-content" className="bg-white rounded-lg shadow-lg p-8">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-6">
-            <Image 
-              src={`${IMAGE_BASE_URL}${result.character.image_url}`}
-              alt={result.character.name}
-              width={300}
-              height={300}
-              className="rounded-lg shadow-md"
+            <img
+            src={`${IMAGE_BASE_URL}${result.character.image_url}`}
+            alt={result.character.name}
+            width={300}
+            height={300}
+            className="rounded-lg shadow-md"
+            crossOrigin="anonymous"
             />
           </div>
           <h1 className="text-3xl font-bold mb-2">{result.character.name}</h1>
@@ -127,7 +133,6 @@ export default function Result() {
           )}
         </div>
 
-        {/* ResultActions 컴포넌트로 교체 */}
         <ResultActions 
           mediaUrl={result.character.media_url}
           onShare={handleShare}

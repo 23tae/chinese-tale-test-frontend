@@ -45,7 +45,7 @@ NEXT_PUBLIC_BACKEND_PORT=your_backend_port
 ## 📂 프로젝트 구조
 
 ```
-sinotale/
+chinese-tale-test-frontend/
 ├── src
 │   ├── app
 │   │   ├── globals.css
